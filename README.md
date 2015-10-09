@@ -1,19 +1,18 @@
-Title :
+Title
 ========================================================================================
 Sample oAuth2.0 server with Client Credential implementation
 
-Description : 
+Description
 ========================================================================================
 Purpose of this implementation is to secure service api (web services) and socket api (web socket connection) from any random unauthorized client for the apps that don't have user login. 
 The use case here is we have two different resource servers: 1) A nodejs server that hosts diffferent web services to be consumed in a hybrid (iOS app created using phonegap app) and web app 2) A nodejs server that works as web socket server and its client would be a hybrid (iOS app created using phonegap app) and web app. And we need to restrict their access to authorised clients (Our own hybrid and web apps). 
 
-	Prerequisite : 
-					Understanding of oAuth2.0, nodejs, socket.io, JSON Web Token(JWT)
+	Prerequisite : Understanding of oAuth2.0, nodejs, socket.io, JSON Web Token(JWT)
 
 
 This package itself is an authoisation server with only Client Credential method implementation. 
 
-Get Token:
+Get Token
 ========================================================================================
 It issues token to authorised clients.
 
@@ -34,7 +33,7 @@ Before issuing token it verifies for valid origin of request, client_id, client_
 Any client that need to access any of the resource servers first of all must get access_token
 
 
-Middleware:
+Middlewares
 ========================================================================================
 
 1) ServiceAPI Middleware : (lib/serviceAPIMW.js)
@@ -54,7 +53,7 @@ Other Features:
 3) Cron job to remove log file content everyday
 
 
-Note:
+Note
 =========================================================================================
 
 1) Only one config file is used. Node config module can be used for separate config file for development and production environment.                                                                                                                 
