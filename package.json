@@ -9,6 +9,10 @@
   },
   "author": "Navdeep Jain <navdeep.n.jain@gmail.com>",
   "license": "ISC",
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/jain009deep/node_oAuth20.git"
+  },
   "dependencies": {
     "body-parser": "^1.14.1",
     "cron": "^1.0.9",
