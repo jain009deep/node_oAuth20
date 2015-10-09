@@ -18,14 +18,14 @@ It issues token to authorised clients.
 
 1) Hybrid app: (app/getHybridToken.js)
 
-url : http://localhost:3000/getToken/hybrid
+url : http://localhost:3000/getToken/hybrid                                               
 body : client_id, client_secret
 
 Before issuing token it verifies for valid hybrid app, client_id, client_secret
 
 2) Web app: (app/getWebToken.js)
 
-url : http://localhost:3000/getToken/web
+url : http://localhost:3000/getToken/web                                                  
 body : client_id, client_secret
 
 Before issuing token it verifies for valid origin of request, client_id, client_secret
@@ -49,7 +49,10 @@ Other Features:
 ========================================================================================
 
 1) Standard boilerplate for a nodejs server
+
 2) Unified logging 
+
+
 3) Cron job to remove log file content everyday
 
 
@@ -58,4 +61,5 @@ Note
 
 1) Only one config file is used. Node config module can be used for separate config file for development and production environment.                                                                                                                 
 2) Client_secret and JWT secret should be stored in persistent database such as mongodb and should be accessible to resource (service api and socket api) servers.                                                                             
-3) For hybrid apps, token request should come from native code and include device_uuis as additional parameter to make it more secure.                                                                                                                           4) For hybrid apps, socket connection should be restricted one per device per app.
+3) For hybrid apps, token request should come from native code and include device_uuis as additional parameter to make it more secure.                                                                                                                      
+4) For hybrid apps, socket connection should be restricted one per device per app.
