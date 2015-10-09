@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js ng-scope" lang="en"> <!--<![endif]-->
+
+<html lang="en">
+	<head>
+		<title>oAuth Socket</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=No, minimal-ui" / >
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	</head>
+	<body>
+		<button onclick="connectSocket()"> connect socket</button>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="socket.io.js"></script>
+		<script>
+		  // to verify socket api access for web app
+			function connectSocket(){
+				//access_token is obtained from rest client for web service
+				var config = {
+						socket_url : 'http://localhost:3000?access_token='
+					},
+					access_token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJjbGllbnRfaWQiOiJ3ZWJBcHAiLCJjdXJyZW50VGltZSI6MTQ0NDMxODEzMzM2NCwiaWF0IjoxNDQ0MzE4MTMzfQ.nG1OYLSSDVUlkAHFfnO1jBK0VOH0hqlU7VbMZqHMPEA";
+			  	socket = io.connect(config.socket_url+encodeURIComponent(access_token));
+				socket.on("msg", function(data){
+				   	console.log("socket data: ", data);
+				});
+			}
+
+		</script>
+    </body>
+</html>
