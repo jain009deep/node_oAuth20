@@ -62,4 +62,5 @@ Note
 1) Only one config file is used. Node config module can be used for separate config file for development and production environment.                                                                                                                 
 2) Client_secret and JWT secret should be stored in persistent database such as mongodb and should be accessible to resource (service api and socket api) servers.                                                                             
 3) For hybrid apps, token request should come from native code and include device_uuis as additional parameter to make it more secure.                                                                                                                      
-4) For hybrid apps, socket connection should be restricted one per device per app.
+4) For hybrid apps, socket connection should be restricted one per device per app.                                            
+5) Replace values of JWT_SECRET_MOBILE_APP, JWT_SECRET_WEB_APP, VALID_CLIENT_SECRETS in config file
