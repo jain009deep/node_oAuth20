@@ -1,19 +1,16 @@
-/*
-	Author: Navdeep Jain
-	Title : Sample oAuth2.0 server with Client Credential implementation
-	Description : 
-				Purpose of this implementation is to secure service api (web services) and socket api (web socket connection) from any random unauthorized client for the apps that don't have user login. 
-				The use case here is we have two different resource servers: 1) A nodejs server that hosts diffferent web services to be consumed in a hybrid (iOS app created using phonegap app) and web app 2) A nodejs server that works as web socket server and its client would be a hybrid (iOS app created using phonegap app) and web app. And we need to restrict their access to authorised clients (Our own hybrid and web apps). 
+Title : Sample oAuth2.0 server with Client Credential implementation
+Description : 
+			Purpose of this implementation is to secure service api (web services) and socket api (web socket connection) from any random unauthorized client for the apps that don't have user login. 
+			The use case here is we have two different resource servers: 1) A nodejs server that hosts diffferent web services to be consumed in a hybrid (iOS app created using phonegap app) and web app 2) A nodejs server that works as web socket server and its client would be a hybrid (iOS app created using phonegap app) and web app. And we need to restrict their access to authorised clients (Our own hybrid and web apps). 
 
-	Prerequisite : Understanding of oAuth2.0, nodejs, socket.io, JSON Web Token(JWT)
-*/
+Prerequisite : Understanding of oAuth2.0, nodejs, socket.io, JSON Web Token(JWT)
 
 
 This package itself is an authoisation server with only Client Credential method implementation. 
 
 Get Token:
 ========================================================================================
-It issues token to authorised users.
+It issues token to authorised clients.
 
 1) Hybrid app: (app/getHybridToken.js)
 
@@ -55,7 +52,6 @@ Other Features:
 Note:
 =========================================================================================
 
-1) Only one config file is used. Node config module can be used for separate config file for development and production environment.
-2) Client_secret and JWT secret should be stored in persistent database such as mongodb to make and should be accessible to resource (service api and socket api) servers.
-3) For hybrid apps, token request should come from native code and include device_uuis as additional parameter to make it more secure.
-4) For hybrid apps, socket connection should be restricted one per device per app.
+1) Only one config file is used. Node config module can be used for separate config file for development and production environment.                                                                                                                 
+2) Client_secret and JWT secret should be stored in persistent database such as mongodb and should be accessible to resource (service api and socket api) servers.                                                                             
+3) For hybrid apps, token request should come from native code and include device_uuis as additional parameter to make it more secure.                                                                                                                           4) For hybrid apps, socket connection should be restricted one per device per app.
