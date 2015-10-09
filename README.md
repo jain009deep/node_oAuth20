@@ -45,7 +45,7 @@ This is an expressjs middleware. Include this middleware in your service api ser
 This is a socketio middleware. Include this middleware in your socket api server, so that only valid request can make socket connection. For hybrid apps it validates a valid request origin and access_token.
 
 
-Other Features:
+Other Features
 ========================================================================================
 
 1) Standard boilerplate for a nodejs server
