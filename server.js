@@ -39,7 +39,7 @@ new cronJob(
     emptyLogFile,
     null, 
     true, 
-    config.CRON_TIMEZONE;
+    config.CRON_TIMEZONE);
 
 function emptyLogFile(){
   fs.writeFileSync(config.INFOLOGFILE,'');
@@ -66,12 +66,17 @@ if(config.isSSL){
   port = normalizePort(process.env.PORT || 443);
   app.set('port', port);
   server = https.createServer(credentials, app);
+    console.log("server started on https://localhost:"+port);
+
 }
 else{
   port = normalizePort(process.env.PORT || 3000);
   app.set('port', port);
   server = http.createServer(app);
+  console.log("server started on http://localhost:"+port);
+
 }
+
 
 io = socket.listen(server);
   
@@ -110,7 +115,7 @@ app.all('/callServiceAPI', function(req, res){
 io.use(isAuthorisedSocketRequest);
 
 io.on('connection', function(socket) {
-  socket.emit("msg", "Jain ho");
+  socket.emit("msg", "Jai ho");
 });
 // ===========================
 
