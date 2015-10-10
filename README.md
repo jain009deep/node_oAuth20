@@ -38,11 +38,21 @@ Middlewares
 
 1) ServiceAPI Middleware : (lib/serviceAPIMW.js)
 
-This is an expressjs middleware. Include this middleware in your service api server, so that only valid request can access the apis. For hybrid apps it validates a valid hybrid app and access_token.
+This is an expressjs middleware. Include this middleware in your service api server, so that only valid request can access the apis. For hybrid apps it validates a valid hybrid app and access_token. 
+
+Use middleware as follow:
+
+app.use(isAuthorisedServiceRequest) 
+or 
+app.use('/securedPath', isAuthorisedServiceRequest);
 
 2) SocketAPI Middleware : (lib/socketAPIMW.js)
 
 This is a socketio middleware. Include this middleware in your socket api server, so that only valid request can make socket connection. For hybrid apps it validates a valid request origin and access_token.
+
+Use middleware as follow:
+
+io.use(isAuthorisedSocketRequest);
 
 
 Other Features
